@@ -17,11 +17,9 @@
 		
 
 		if(empty($this->errorArray) == true) {
-			die("i got here true");
 			return true;
 		}
 		else{
-			die("i got here true");
 			return false;
 		}
 	}

@@ -1,6 +1,6 @@
 <?php
 	include("includes/classes/Account.php");
-	echo $_POST['username'];
+
 	
 	$account = new Account();
 	
@@ -14,7 +14,7 @@
 <body>
 	<div id="inputContainer">
 	<?php foreach ($account->getError() as $value) {
-		echo "<p>{$value}</p>";
+		echo "<p style='color:red;'>{$value}</p>";
 	}
 	?>
 		<!--sform id="loginForm" action="register.php" method="POST">
