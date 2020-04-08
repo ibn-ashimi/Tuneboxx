@@ -17,15 +17,15 @@
 	}
 	
 	
-if(isset($_POST['registerButton'])){
+if(isset($_POST['registerForm'])){
 	//echo"Register button was pressed";
-	$username = sanitizeFormUsername($_post['username']);
-	$firstName = sanitizeFormString($_post['firstName']);
-	$lastName = sanitizeFormString($_post['lastName']);
-	$email = sanitizeFormString($_post['email']);
-	$email2 = sanitizeFormString($_post['email2']);
-	$password = sanitizeFormPassword($_post['password']);
-	$password = sanitizeFormPassword($_post['password']);
+	$username = sanitizeFormUsername($_POST['username']);
+	$firstName = sanitizeFormString($_POST['firstname']);
+	$lastName = sanitizeFormString($_POST['lastname']);
+	$email = sanitizeFormString($_POST['email']);
+	$email2 = sanitizeFormString($_POST['email2']);
+	$password = sanitizeFormPassword($_POST['password']);
+	$password2 = sanitizeFormPassword($_POST['password2']);
 	
 
 	$wasSuccessful = $account->register($username, $firstName, $lastName, $email, $email2, $password, $password2);

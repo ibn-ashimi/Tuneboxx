@@ -1,9 +1,9 @@
 <?php
   class Account{
-	  private $errorArray;
+	  private $errorArray = [];
 	  
 	public function __construct(){
-		$this->errorArray = array();
+
 	}
 		
 	
@@ -17,7 +17,6 @@
 		
 
 		if(empty($this->errorArray) == true) {
-			//insert into DB
 			return true;
 		}
 		else{
@@ -25,11 +24,15 @@
 		}
 	}
 
-	public function getError($error) {
-		if(!in_array($error, $this->errorArray)) {
-			$error = "";
+	public function getError($error = null) {
+		if (!is_null($error)){
+			if(!in_array($error, $this->errorArray)) {
+				return  "";
+			}
+			return "<span class='errorMessage'>$error</span>";
 		}
-		return "<span class='errorMessage'>$error</span>";
+		
+		return  $this->errorArray;
 	}
 		
 	private function validateUsername($un){
